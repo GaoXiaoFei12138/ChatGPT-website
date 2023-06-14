@@ -3,7 +3,8 @@ $(document).ready(function() {
   var chatBtn = $('#chatBtn');
   var chatInput = $('#chatInput');
   var chatWindow = $('#chatWindow');
-  
+  var contactLink = document.getElementById("contact-link");
+
   // 全局变量,存储对话信息
   var messages = [];
 
@@ -16,6 +17,12 @@ $(document).ready(function() {
     const startAttr = (ordered && start) ? ` start="${start}"` : '';
     return `<${type}${startAttr}>\n${body}</${type}>\n`;
   };
+
+  contactLink.addEventListener("click", function(event) {
+        event.preventDefault(); // 阻止默认链接跳转行为
+        var phoneNumber = "1711843905"; // 替换成你想展示的电话号码
+        alert("QQ：" + phoneNumber);
+        });
 
   // 设置marked选项
   marked.setOptions({
