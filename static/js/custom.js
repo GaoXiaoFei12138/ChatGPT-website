@@ -208,8 +208,10 @@ $(document).ready(function() {
   // Enter键盘事件
   function handleEnter(e){
     if (e.keyCode==13){
-      chatBtn.click();
-      e.preventDefault();  //避免回车换行
+        if(event.shiftKey){
+           chatBtn.click();
+           e.preventDefault();  //避免回车换行
+        }
     }
   }
 
